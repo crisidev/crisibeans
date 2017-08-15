@@ -1,5 +1,14 @@
 " vim: ft=vim:fdm=marker
 
+" DESC: Check variable and set default value if it not exists
+fun! pymode#default(name, default) "{{{
+    if !exists(a:name)
+        let {a:name} = a:default
+        return 0
+    endif
+    return 1
+endfunction "}}}
+
 " Enable pymode syntax for python files
 call pymode#default('g:pymode', 1)
 call pymode#default('g:pymode_syntax', g:pymode)
