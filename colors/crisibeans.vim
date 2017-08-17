@@ -480,6 +480,10 @@ hi! link phpVarSelector Identifier
 " Python
 
 hi! link pythonOperator Statement
+hi! link pythonExClass PythonSelf
+call s:X("pythonDocString","556633","","","DarkGreen","")
+call s:X("pythonStrFormatting","8fbfdc","","","LightBlue","")
+call s:X("pythonException","8fbfdc","","","LightBlue","")
 
 " Ruby
 
