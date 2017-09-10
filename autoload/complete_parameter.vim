@@ -1,8 +1,8 @@
 function! complete_parameter#pre_complete(failed_inserted) "{{{
-    return "\<TAB>"
+    return "\<Plug>delimitMate("
 endfunction "}}}
 
 " deprecated
 function! complete_parameter#jumpable(forward) "{{{
-    return "\<TAB>"
+    return "\<Plug>delimitMate("
 endfunction "}}}
