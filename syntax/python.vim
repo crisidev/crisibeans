@@ -138,7 +138,6 @@ endif
 
     syn match   pythonDecorator "@" display nextgroup=pythonDottedName skipwhite
     syn match   pythonDottedName "[a-zA-Z_][a-zA-Z0-9_]*\(\.[a-zA-Z_][a-zA-Z0-9_]*\)*" display contained
-    syn match   pythonDot        "\." display containedin=pythonDecorator
 
 " }}}
 
