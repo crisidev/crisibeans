@@ -57,6 +57,9 @@ call s:default('g:crisibeans_syntax_builtin_objs', g:crisibeans_syntax_all)
 " Highlight builtin types (str, list, ...)
 call s:default('g:crisibeans_syntax_builtin_types', g:crisibeans_syntax_all)
 
+" Highlight builtin types (div, eval, ...)
+call s:default('g:crisibeans_syntax_builtin_funcs', g:crisibeans_syntax_all)
+
 " Highlight exceptions (TypeError, ValueError, ...)
 call s:default('g:crisibeans_syntax_highlight_exceptions', g:crisibeans_syntax_all)
 
@@ -135,7 +138,7 @@ endif
 
     syn match   pythonDecorator "@" display nextgroup=pythonDottedName skipwhite
     syn match   pythonDottedName "[a-zA-Z_][a-zA-Z0-9_]*\(\.[a-zA-Z_][a-zA-Z0-9_]*\)*" display contained
-    "syn match   pythonDot        "\." display containedin=pythonDottedName
+    syn match   pythonDot        "\." display containedin=pythonDecorator
 
 " }}}
 
