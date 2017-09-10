@@ -1,6 +1,6 @@
 " vim: ft=vim:fdm=marker
 "
-fun! crisibeans_default(name, default) "{{{
+fun! s:default(name, default) "{{{
     if !exists(a:name)
         let {a:name} = a:default
         return 0
@@ -9,7 +9,7 @@ fun! crisibeans_default(name, default) "{{{
 endfunction "}}}
 
 " Enable crisibeans syntax for python files
-call crisibeans_default('g:crisibeans_syntax', 1)
+call s:default('g:crisibeans_syntax', 1)
 
 " DESC: Disable script loading
 if !g:crisibeans_syntax
@@ -19,53 +19,53 @@ endif
 " OPTIONS: {{{
 
 " Highlight all by default
-call crisibeans_default('g:crisibeans_syntax_all', 1)
+call s:default('g:crisibeans_syntax_all', 1)
 
 " Highlight 'print' as function
-call crisibeans_default("g:crisibeans_syntax_print_as_function", 0)
+call s:default("g:crisibeans_syntax_print_as_function", 0)
 "
 " Highlight 'async/await' keywords
-call crisibeans_default("g:crisibeans_syntax_highlight_async_await", g:crisibeans_syntax_all)
+call s:default("g:crisibeans_syntax_highlight_async_await", g:crisibeans_syntax_all)
 
 " Highlight '=' operator
-call crisibeans_default('g:crisibeans_syntax_highlight_equal_operator', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_highlight_equal_operator', g:crisibeans_syntax_all)
 
 " Highlight '*' operator
-call crisibeans_default('g:crisibeans_syntax_highlight_stars_operator', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_highlight_stars_operator', g:crisibeans_syntax_all)
 
 " Highlight 'self' keyword
-call crisibeans_default('g:crisibeans_syntax_highlight_self', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_highlight_self', g:crisibeans_syntax_all)
 
 " Highlight indent's errors
-call crisibeans_default('g:crisibeans_syntax_indent_errors', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_indent_errors', g:crisibeans_syntax_all)
 
 " Highlight space's errors
-call crisibeans_default('g:crisibeans_syntax_space_errors', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_space_errors', g:crisibeans_syntax_all)
 
 " Highlight string formatting
-call crisibeans_default('g:crisibeans_syntax_string_formatting', g:crisibeans_syntax_all)
-call crisibeans_default('g:crisibeans_syntax_string_format', g:crisibeans_syntax_all)
-call crisibeans_default('g:crisibeans_syntax_string_templates', g:crisibeans_syntax_all)
-call crisibeans_default('g:crisibeans_syntax_doctests', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_string_formatting', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_string_format', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_string_templates', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_doctests', g:crisibeans_syntax_all)
 
 " Support docstrings in syntax highlighting
-call crisibeans_default('g:crisibeans_syntax_docstrings', 1)
+call s:default('g:crisibeans_syntax_docstrings', 1)
 
 " Highlight builtin objects (True, False, ...)
-call crisibeans_default('g:crisibeans_syntax_builtin_objs', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_builtin_objs', g:crisibeans_syntax_all)
 
 " Highlight builtin types (str, list, ...)
-call crisibeans_default('g:crisibeans_syntax_builtin_types', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_builtin_types', g:crisibeans_syntax_all)
 
 " Highlight builtin types (div, eval, ...)
-call crisibeans_default('g:crisibeans_syntax_builtin_funcs', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_builtin_funcs', g:crisibeans_syntax_all)
 
 " Highlight exceptions (TypeError, ValueError, ...)
-call crisibeans_default('g:crisibeans_syntax_highlight_exceptions', g:crisibeans_syntax_all)
+call s:default('g:crisibeans_syntax_highlight_exceptions', g:crisibeans_syntax_all)
 
 " More slow synchronizing. Disable on the slow machine, but code in docstrings
 " could be broken.
-call crisibeans_default('g:crisibeans_syntax_slow_sync', 1)
+call s:default('g:crisibeans_syntax_slow_sync', 1)
 
 " }}}
 
