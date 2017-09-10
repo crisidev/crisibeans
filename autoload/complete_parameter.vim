@@ -1,8 +1,8 @@
 function! complete_parameter#pre_complete(failed_inserted) "{{{
-    return ""
+    return "()"
 endfunction "}}}
 
 " deprecated
 function! complete_parameter#jumpable(forward) "{{{
-    return ""
+    return "()"
 endfunction "}}}
