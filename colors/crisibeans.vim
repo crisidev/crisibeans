@@ -463,6 +463,12 @@ call s:X("DiffDelete","40000A","700009","","DarkRed","DarkRed")
 call s:X("DiffChange","","2B5B77","","White","DarkBlue")
 call s:X("DiffText","8fbfdc","000000","reverse","Yellow","")
 
+" Signify
+
+call s:X("SignifySignAdd","32CD32","333333","","",s:termBlack)
+call s:X("SignifySignDelete","DC143C","333333","","",s:termBlack)
+call s:X("SignifySignChange","FFD700","333333","","",s:termBlack)
+
 " PHP
 
 hi! link phpFunctions Function
