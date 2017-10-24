@@ -32,16 +32,18 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if !exists('g:yapf_style')
-    let g:yapf_style = "{based_on_style: facebook, column_limit: 120}"
+    let g:yapf_style = '{based_on_style: facebook, column_limit: 120}'
 endif
 
 if exists('g:yapf_autoformat')
     if g:yapf_autoformat
-        autocmd BufWritePost *.py call yapf#YAPF()
+        augroup YapfFormar
+            autocmd BufWritePost *.py call yapf#YAPF()
+        augroup END
     endif
 endif
 
-function! yapf#YAPF() range
+function! yapf#YAPF() range abort
   " Determine range to format.
   let l:line_ranges = a:firstline . '-' . a:lastline
   let l:cmd = 'yapf --lines=' . l:line_ranges . ' --style="' . g:yapf_style . '"'
