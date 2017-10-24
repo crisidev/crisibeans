@@ -57,9 +57,9 @@ function! yapf#YAPF() range abort
   endif
 
   if v:shell_error
-    echohl ErrorMsg
-    echomsg printf('"%s" returned error: %s', l:cmd, l:formatted_text[-1])
-    echohl None
+    " echohl ErrorMsg
+    " echomsg printf('"%s" returned error: %s', l:cmd, l:formatted_text[-1])
+    " echohl None
     return
   endif
 
