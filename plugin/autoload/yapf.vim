@@ -17,21 +17,28 @@
 " Place this script in your ~/.vim/autoload directory. You can add accessors to
 " ~/.vimrc, e.g.:
 "
-"    map <C-P> :call yapf#YAPF()<cr>
-"    imap <C-P> <c-o>:call yapf#YAPF()<cr>
-"
-" Alternatively, you can call the command YAPF. If you omit the range,
+" You can call the command YAPF. If you omit the range,
 " it will reformat the whole buffer.
 "
 " example:
 "   :YAPF       " formats whole buffer
 "   :'<,'>YAPF  " formats lines selected in visual mode
-if !exists(g:yapf_style)
+"
+" Options:
+" g:yapf_stile
+"   overrides default formatting style
+" g:yapf_autoformat
+"   if set to 1 it will install an autocmd and run yapf on every write
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if !exists('g:yapf_style')
     let g:yapf_style = "{based_on_style: facebook, column_limit: 120}"
 endif
 
-if g:yapf_autoformat
-    autocmd BufWritePost *.py call yapf#YAPF()
+if exists('g:yapf_autoformat')
+    if g:yapf_autoformat
+        autocmd BufWritePost *.py call yapf#YAPF()
+    endif
 endif
 
 function! yapf#YAPF() range
