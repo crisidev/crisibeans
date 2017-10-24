@@ -26,14 +26,10 @@
 " example:
 "   :YAPF       " formats whole buffer
 "   :'<,'>YAPF  " formats lines selected in visual mode
-if !exists('g:yapf_executable')
-    let g:yapf_executable = 'yapf'
-endif
-
 function! yapf#YAPF() range
   " Determine range to format.
   let l:line_ranges = a:firstline . '-' . a:lastline
-  let l:cmd = g:yapf_executable . ' --lines=' . l:line_ranges
+  let l:cmd = 'yapf --lines=' . l:line_ranges . ' --style={based_on_style: facebook, column_limit: 120}'
 
   " Call YAPF with the current buffer
   if exists('*systemlist')
