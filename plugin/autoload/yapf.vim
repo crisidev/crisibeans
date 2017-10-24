@@ -29,7 +29,7 @@
 function! yapf#YAPF() range
   " Determine range to format.
   let l:line_ranges = a:firstline . '-' . a:lastline
-  let l:cmd = 'yapf --lines=' . l:line_ranges . ' --style={based_on_style: facebook, column_limit: 120}'
+  let l:cmd = 'yapf --lines=' . l:line_ranges . ' --style="{based_on_style: facebook, column_limit: 120}"'
 
   " Call YAPF with the current buffer
   if exists('*systemlist')
