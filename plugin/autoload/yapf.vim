@@ -26,10 +26,18 @@
 " example:
 "   :YAPF       " formats whole buffer
 "   :'<,'>YAPF  " formats lines selected in visual mode
+if !exists(g:yapf_style)
+    let g:yapf_style = "{based_on_style: facebook, column_limit: 120}"
+endif
+
+if g:yapf_autoformat
+    autocmd BufWritePost *.py call yapf#YAPF()
+endif
+
 function! yapf#YAPF() range
   " Determine range to format.
   let l:line_ranges = a:firstline . '-' . a:lastline
-  let l:cmd = 'yapf --lines=' . l:line_ranges . ' --style="{based_on_style: facebook, column_limit: 120}"'
+  let l:cmd = 'yapf --lines=' . l:line_ranges . ' --style="' . g:yapf_style . '"'
 
   " Call YAPF with the current buffer
   if exists('*systemlist')
