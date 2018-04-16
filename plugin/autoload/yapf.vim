@@ -37,7 +37,7 @@ endif
 
 if exists('g:yapf_autoformat')
     if g:yapf_autoformat
-        augroup YapfFormar
+        augroup YapfFormat
             autocmd BufWritePost *.py call yapf#YAPF()
         augroup END
     endif
