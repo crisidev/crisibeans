@@ -71,7 +71,7 @@ function! yapf#YAPF() range abort
   call cursor(a:firstline, 1)
 endfunction
 
-function yapf#YAPFA() abort
+function! yapf#YAPFA() abort
   let save_pos = getpos('.')
   call yapf#YAPF()
   call setpos('.', save_pos)
