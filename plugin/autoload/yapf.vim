@@ -73,7 +73,7 @@ endfunction
 
 function! yapf#YAPFA() abort
   let save_pos = getpos('.')
-  call YAPF()
+  call yapf#YAPF()
   call setpos('.', save_pos)
 endfunction
 
